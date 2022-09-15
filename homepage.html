@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎</title>
+    <link type="text/css" rel="stylesheet" href="./css/common.css">
+    <style>
+
+    </style>
+    <script>
+        var trueBgm;
+        function controlBgm(){
+            var bgm = trueBgm;
+            var controlBtn = document.getElementById("controlBgm");
+            if (bgm.paused){
+                bgm.paused=false;
+                bgm.play();
+                controlBtn.value="暂停BGM";
+            }else {
+                bgm.paused=true;
+                bgm.pause();
+                controlBtn.value="播放BGM";
+            }
+        }
+        function showVideo(){
+            if (window.confirm("我保证已年满18周岁")){
+                var video = document.getElementById("nggyu");
+                video.hidden = false;
+                video.play();
+                document.getElementById("btn").hidden = true;
+            }
+        }
+        window.onload=function (){
+            var i = Math.floor((Math.random()*10)+1);//1-10
+            var bgm;
+            if (i <= 2){
+                bgm = document.getElementById("bgm");
+            }else if(i <= 5){
+                bgm = document.getElementById("bgm2");
+            }else if(i <= 8){
+                bgm = document.getElementById("bgm3");
+            }else {
+                bgm = document.getElementById("bgm4");
+            }
+            trueBgm = bgm;
+            // alert(bgm.paused)
+            if (bgm.paused){
+                bgm.paused=false;
+                bgm.play()
+                // alert(bgm.paused)
+            }
+        }
+
+    </script>
+</head>
+<body>
+	<div>
+        <div style="margin-top: 30pt">
+            <nav>
+                <a href="homepage.html">首页</a>
+                <a href="information.html" target="show">个人简介</a>
+                <a href="topic.html" target="show">文章列表</a>
+                <a href="http://www.w3school.com.cn">前往w3chool</a>
+            </nav>
+            <div style="float:right;"><input class="btn" type="button" onclick="controlBgm()" id="controlBgm" value="暂停BGM"/></div>
+        </div>
+
+    </div>
+    <!--<div class="maincontent">
+        <p>欢迎你来到我的个人网站</p>
+        <p>212090916</p>
+
+    </div>-->
+    <div class="maincontent">
+        <div style="float:left;"><img src="./img/PlayerStandIdle2x.gif"/></div>
+        <iframe src="welcome.html" height="800pt" width="1080pt" name="show">
+        </iframe>
+    </div>
+
+<!--    <hr />-->
+<!--    <a href="http://www.w3school.com.cn" target="_blank">前往w3school</a><br>-->
+    <div align="center">
+    </div>
+    <div>
+        <audio id="bgm"loop="loop" preload="auto"
+               src="./music/2.mp3">
+        </audio>
+        <audio id="bgm2"loop="loop" preload="auto"
+               src="./music/3.mp3">
+        </audio>
+        <audio id="bgm3"loop="loop" preload="auto"
+               src="./music/4.mp3">
+        </audio>
+        <audio id="bgm4"loop="loop" preload="auto"
+               src="./music/18.mp3">
+        </audio>
+    </div>
+</body>
+</html>

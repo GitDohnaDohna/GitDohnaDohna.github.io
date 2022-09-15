@@ -2,105 +2,31 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-	<embed src="./music/アリスソフト (Alicesoft) - dndndn.dn [mqms2].mp3" hidden="flase" autostart="true" loop="true">
     <title>欢迎</title>
-    <link type="text/css" rel="stylesheet" href="./第5章/style1.css">
+    <link type="text/css" rel="stylesheet" href="./css/common.css">
     <style>
-        <!-- @import url("第5章/style2.css"); -->
-        *{
-            margin:0;
-            padding:0;
-        }
-        body{
-            min-width:1000px;
-            margin:0 auto;
-            font-size:12px;
-            background: url(./img/69859628_p0.jpg) center top no-repeat fixed;
-            text-align:justify;
-
-        }
-        h1,h2,h3,h4{
-            font-weight:500;
-        }
-        img{
-            border:none;
-        }
-
-        a {
-            font-size: 14px;
-            font-family: "微软雅黑";
-            color: white;
-        }
-        a:link {
-            color: #333;
-            text-decoration: none;
-        }
-        a:visited {
-            text-decoration: none;
-            color: #333;
-        }
-        a:hover {
-            text-decoration: none;
-            color: #FFF;
-        }
-        a:active {
-            text-decoration: none;
-            color: #333;
-        }
-        ul{
-            list-style-type:none;
-        }
-
-        div.clear{
-            font: 0px Arial; line-height:0;
-            height:0;
-            overflow:hidden;
-            clear:both;
+        #welcome{
+            line-height: 125pt;
         }
     </style>
     <script>
-        function showVideo(){
-            if (window.confirm("我保证已年满18周岁")){
-                var video = document.getElementById("nggyu");
-                video.hidden = false;
-                video.play();
-                document.getElementById("btn").hidden = true;
-            }
-        }
-        window.onload=function (){
-            var bgm = document.getElementById("bgm");
-            if (bgm.paused){
-                bgm.play();
-            }
+        function toHomePage(){
+            window.location.href="homepage.html";
         }
 
     </script>
 </head>
 <body>
 	<div>
-        <div>
-            <audio id="bgm" autoplay="autoplay" loop="loop" preload="auto"
-                   src="./music/アリスソフト (Alicesoft) - dndndn.dn [mqms2].mp3" controls="controls">
-            </audio>
+        <div id="welcome">
+            <br>
+            <h1 align="center">欢迎来到我的个人网站</h1>
         </div>
-        <div>
-            <h1 align="center">这是一个标题</h1>
-        </div>
-        <div>
-            <img src="./img/PlayerStandIdle2x.gif"/><br>
-        </div>
+
     </div>
-
-
-    <hr />
-    <a href="http://www.w3school.com.cn" target="_blank">前往w3school</a><br>
+<!--    <a href="http://www.w3school.com.cn" target="_blank">前往w3school</a><br>-->
     <div align="center">
-        <input type="button" onclick="showVideo()" id="btn" value="点我看劲爆热舞" style="width:100px;height:60px"/>
-        <video width="1280" height="720" controls="controls" autoplay="autoplay" loop hidden id="nggyu" >
-            <!-- <source src="/i/movie.ogg" type="video/ogg"> -->
-            <source src="./movie/劲爆热舞.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video><br>
+        <input type="button" onclick="toHomePage()" id="btn" value="点击进入" style="width:100px;height:60px"/>
     </div>
 
 </body>
